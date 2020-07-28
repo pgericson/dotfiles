@@ -1,5 +1,6 @@
 brew "git"
 
+brew "bash-completion"
 brew "anyenv"
 
 tap "github/gh"
@@ -12,6 +13,7 @@ brew "koekeishiya/homebrew-formulae/yabai"
 
 brew "tmux"
 brew "vim"
+brew "fzf"
 brew "wget"
 brew "curl"
 brew "ag"
@@ -29,4 +31,5 @@ cask "spotify"
 cask "firefox"
 cask "dashlane"
 cask "java"
+cask "visual-studio-code"
 
