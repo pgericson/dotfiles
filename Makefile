@@ -16,9 +16,16 @@ symlink:
 	ln -sf `pwd`/ssh_config ~/.ssh/config
 	ln -sf `pwd`/Brewfile ~/Brewfile
 	ln -sf `pwd`/zshrc ~/.zshrc
+	ln -sf `pwd`/dot.osx/skhdrc ~/.skhdrc
+	ln -sf `pwd`/dot.osx/yabairc ~/.yabairc
+
+vscode:
+	ln -sf `pwd`/vscode/settings.json ~/Library/Application Support/Code/User/settings.json
+	ln -sf `pwd`/vscode/keybindings.json ~/Library/Application Support/Code/User/keybindings.json
+	ln -sf `pwd`/vscode/code-snippets.code-snippets ~/Library/Application Support/Code/User/snippets/code-snippets.code-snippets
 
 symlink_clean:
-	rm -f ~/.vimrc ~/.gitconfig  ~/.bashrc ~/.bash_aliases ~/.bash_profile ~/.inputrc ~/.tmux.conf ~/Brewfile ~/.zshrc
+	rm -f ~/.vimrc ~/.gitconfig  ~/.bashrc ~/.bash_aliases ~/.bash_profile ~/.inputrc ~/.tmux.conf ~/Brewfile ~/.zshrc ~/.skhdrc ~/.yabairc
 
 zsh:
 	# TODO Download dependencies

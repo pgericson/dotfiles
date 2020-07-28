@@ -192,3 +192,6 @@ export LC_ALL=en_US.UTF-8
 
 unsetopt CDABLE_VARS
 
+# anyenv
+eval "$(anyenv init -)"
+
