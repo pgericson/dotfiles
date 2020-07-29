@@ -9,6 +9,9 @@ alias gdc='git diff --cached'
 # ruby specific
 alias be='bundle exec'
 
+# karnov
+alias mario='cd ~/code/karnov/mario'
+alias karnov='cd ~/code/karnov'
 
 
 # Zip files

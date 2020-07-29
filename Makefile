@@ -19,10 +19,19 @@ symlink:
 	ln -sf `pwd`/dot.osx/skhdrc ~/.skhdrc
 	ln -sf `pwd`/dot.osx/yabairc ~/.yabairc
 
-vscode:
-	ln -sf `pwd`/vscode/settings.json ~/Library/Application Support/Code/User/settings.json
-	ln -sf `pwd`/vscode/keybindings.json ~/Library/Application Support/Code/User/keybindings.json
-	ln -sf `pwd`/vscode/code-snippets.code-snippets ~/Library/Application Support/Code/User/snippets/code-snippets.code-snippets
+vscode_setup: symlink_vscode vscode_repeat_key_fix
+
+symlink_vscode:
+	ln -sf `pwd`/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+	ln -sf `pwd`/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+	ln -sf `pwd`/vscode/code-snippets.code-snippets ~/Library/Application\ Support/Code/User/snippets/code-snippets.code-snippets
+
+vscode_repeat_key_fix:
+	defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false         # For VS Code
+	defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false # For VS Code Insider
+	defaults write com.visualstudio.code.oss ApplePressAndHoldEnabled -bool false    # For VS Codium
+	defaults delete -g ApplePressAndHoldEnabled                                      # If necessary, reset global default
+
 
 symlink_clean:
 	rm -f ~/.vimrc ~/.gitconfig  ~/.bashrc ~/.bash_aliases ~/.bash_profile ~/.inputrc ~/.tmux.conf ~/Brewfile ~/.zshrc ~/.skhdrc ~/.yabairc
