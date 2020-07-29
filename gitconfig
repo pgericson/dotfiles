@@ -14,7 +14,7 @@
     lg = log --graph --abbrev-commit --decorate --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(yellow)%d%C(reset)' --all
 
 [push]
-    default = simple
+	default = current
 
 [core]
     excludesfile = ~/.gitignore

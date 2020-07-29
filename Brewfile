@@ -42,4 +42,5 @@ cask "firefox"
 cask "dashlane"
 cask "java"
 cask "visual-studio-code"
+cask "skitch"
 
