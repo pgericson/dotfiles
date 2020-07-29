@@ -15,15 +15,13 @@ brew "tmux"
 brew "vim"
 brew "fzf"
 brew "wget"
+brew "htop"
 brew "curl"
 brew "ag"
 brew "watch"
 brew "jq"
 brew "tldr"
 brew "openssl"
-
-# added for auto add to brew file when brew install
-brew "rcmdnk/file/brew-file"
 
 # dev dependencies
 brew "poppler" # used for pdftotext in mario

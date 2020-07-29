@@ -176,12 +176,6 @@ if test -d "$HOME/bin"; then PATH="$HOME/bin:$PATH"; fi
 export PATH="$HOME/opt/anaconda3/bin:$PATH"
 export PATH="$HOME/opt/brew/bin:$PATH"
 
-# fuzzy search
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-if type ag &> /dev/null; then
-    export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore -g ""'
-fi
 
 
 # home and end
@@ -199,3 +193,12 @@ if [ -f $(brew --prefix)/etc/brew-wrap ];then
   source $(brew --prefix)/etc/brew-wrap
 fi
 
+# enable vim mode in zsh
+bindkey -v
+
+# fuzzy search
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if type ag &> /dev/null; then
+    export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore -g ""'
+fi
