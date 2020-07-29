@@ -176,12 +176,6 @@ if test -d "$HOME/bin"; then PATH="$HOME/bin:$PATH"; fi
 export PATH="$HOME/opt/anaconda3/bin:$PATH"
 export PATH="$HOME/opt/brew/bin:$PATH"
 
-
-
-# home and end
-bindkey "^[[1~" beginning-of-line
-bindkey "^[[4~" end-of-line
-
 export LC_ALL=en_US.UTF-8
 
 unsetopt CDABLE_VARS
@@ -193,6 +187,12 @@ if [ -f $(brew --prefix)/etc/brew-wrap ];then
   source $(brew --prefix)/etc/brew-wrap
 fi
 
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  autoload -Uz compinit
+  compinit
+fi
+
 # enable vim mode in zsh
 bindkey -v
 
@@ -202,3 +202,7 @@ bindkey -v
 if type ag &> /dev/null; then
     export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore -g ""'
 fi
+
+# home and end
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line

@@ -1,0 +1,8 @@
+{
+    "Pry debug": {
+        "scope": ["ruby"],
+        "prefix": ["pry"],
+        "body": ["require \"pry\"; binding.pry"],
+        "description": "add pry debug info"
+    }
+}

@@ -22,6 +22,7 @@ brew "watch"
 brew "jq"
 brew "tldr"
 brew "openssl"
+brew "zsh-completions"
 
 # dev dependencies
 brew "poppler" # used for pdftotext in mario
