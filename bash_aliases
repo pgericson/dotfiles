@@ -6,6 +6,8 @@ alias gco='git commit'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gpwl='git push --force-with-lease'
+alias gmp='git checkout master && git pull'
+alias gmpc='gmp && git checkout -'
 
 # misc
 alias l='ls -lha'
