@@ -5,6 +5,10 @@ alias gad='git add .'
 alias gco='git commit'
 alias gd='git diff'
 alias gdc='git diff --cached'
+alias gpwl='git push --force-with-lease'
+
+# misc
+alias l='ls -lha'
 
 # ruby specific
 alias be='bundle exec'
@@ -12,7 +16,6 @@ alias be='bundle exec'
 # karnov
 alias mario='cd ~/code/karnov/mario'
 alias karnov='cd ~/code/karnov'
-
 
 # Zip files
 extract () {
