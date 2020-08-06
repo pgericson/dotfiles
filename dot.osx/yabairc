@@ -1,15 +1,15 @@
 #!/usr/bin/env sh
 
 # bar settings
-yabai -m config status_bar                   off
-yabai -m config status_bar_text_font         "Helvetica Neue:Bold:12.0"
-yabai -m config status_bar_icon_font         "FontAwesome:Regular:12.0"
-yabai -m config status_bar_background_color  0xff202020
-yabai -m config status_bar_foreground_color  0xffa8a8a8
-yabai -m config status_bar_space_icon_strip  1 2 3 4 5 6 7 8 9 0
-yabai -m config status_bar_power_icon_strip   
-yabai -m config status_bar_space_icon        
-yabai -m config status_bar_clock_icon        
+# yabai -m config status_bar                   off
+# yabai -m config status_bar_text_font         "Helvetica Neue:Bold:12.0"
+# yabai -m config status_bar_icon_font         "FontAwesome:Regular:12.0"
+# yabai -m config status_bar_background_color  0xff202020
+# yabai -m config status_bar_foreground_color  0xffa8a8a8
+# yabai -m config status_bar_space_icon_strip  1 2 3 4 5 6 7 8 9 0
+# yabai -m config status_bar_power_icon_strip   
+# yabai -m config status_bar_space_icon        
+# yabai -m config status_bar_clock_icon        
 
 
 # global settings
@@ -75,4 +75,12 @@ yabai -m signal --add \
 
 yabai -m rule --add app='^Microsoft Teams Notification$' manage=off
 
+# update status bar
+yabai -m config top_padding 20
+yabai -m signal --add event=space_changed action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-primary-jsx\"'"
+yabai -m signal --add event=window_focused action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-primary-jsx\"'"
+yabai -m signal --add event=space_changed action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
+yabai -m signal --add event=window_focused action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
+
 echo "yabai configuration loaded.."
+

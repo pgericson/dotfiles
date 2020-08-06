@@ -19,6 +19,9 @@ symlink:
 	ln -sf `pwd`/dot.osx/skhdrc ~/.skhdrc
 	ln -sf `pwd`/dot.osx/yabairc ~/.yabairc
 
+nibar:
+	git clone https://github.com/kkga/nibar ~/Library/Application\ Support/Übersicht/widgets/nibar
+
 vscode_setup: symlink_vscode vscode_repeat_key_fix
 
 symlink_vscode:

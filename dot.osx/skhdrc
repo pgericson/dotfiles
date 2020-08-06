@@ -137,18 +137,19 @@ ctrl + shift - 8 : yabai -m window --space  8
 ctrl + shift - 9 : yabai -m window --space  9
 ctrl + shift - 0 : yabai -m window --space 10
 
-
 # send window to desktop and follow focus
 # shift + cmd - z : yabai -m window --space next; yabai -m space --focus next
 # shift + cmd - 2 : yabai -m window --space  2; yabai -m space --focus 2
 
 # focus monitor
-ctrl + alt - h  : yabai -m display --focus prev
-ctrl + alt - l  : yabai -m display --focus 3
+ctrl + alt - j  : yabai -m display --focus recent
+# ctrl + alt - l  : yabai -m display --focus 3
 
 # send window to monitor and follow focus
-ctrl + cmd - n  : yabai -m window --display next; yabai -m display --focus next
-# ctrl + cmd - 1  : yabai -m window --display 1; yabai -m display --focus 1
+ctrl + shift - n: index="$(yabai -m query --windows --window | jq '.id')" && \
+    yabai -m window --display recent && \
+    yabai -m window --focus "${index}"
+# ctrl + cmd - 1  : yabai -m window --display 1; yabai -m dsplay --focus 1
 
 # move floating window
 # shift + ctrl - a : yabai -m window --move rel:-20:0

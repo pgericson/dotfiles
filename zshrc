@@ -206,3 +206,17 @@ fi
 # home and end
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
+
+ssh-add -K ~/.ssh/id_rsa
+
+
+# set specific version 11
+export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
+export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
+
+alias java8='export JAVA_HOME=$JAVA_8_HOME'
+alias java11='export JAVA_HOME=$JAVA_11_HOME'
+
+# default to Java 11
+java11
+

@@ -10,6 +10,8 @@ brew "github/gh/gh"
 tap "koekeishiya/homebrew-formulae"
 brew "koekeishiya/homebrew-formulae/skhd"
 brew "koekeishiya/homebrew-formulae/yabai"
+cask "ubersicht"
+cask "sf-symbols"
 
 brew "tmux"
 brew "vim"
@@ -33,14 +35,22 @@ brew "redis"
 brew "libpq"
 
 # GUI programs
-cask "docker"
-cask "postgres"
-cask "iterm2"
 cask "slack"
 cask "spotify"
 cask "firefox"
 cask "dashlane"
-cask "java"
-cask "visual-studio-code"
 cask "skitch"
 
+# development gui stuff
+cask "visual-studio-code"
+cask "java"
+cask "docker"
+cask "postgres"
+cask "iterm2"
+cask "tableplus"
+cask "cyberduck"
+
+# java shit
+tap "AdoptOpenJDK/openjdk"
+cask "adoptopenjdk8"
+cask "adoptopenjdk11"
