@@ -22,7 +22,6 @@ yabai -m config window_opacity_duration      0.0
 yabai -m config window_shadow                on
 yabai -m config window_border                off
 yabai -m config window_border_width          3
-yabai -m config active_window_border_topmost off
 yabai -m config active_window_border_color   0xff775759
 yabai -m config normal_window_border_color   0xff505050
 yabai -m config active_window_opacity        1.0
@@ -47,24 +46,16 @@ yabai -m config active_window_border_color 0xFF0373BB
 yabai -m config normal_window_border_color 0xff222222
 
 # spaces
-yabai -m space --create
-yabai -m space 1 --label main
-yabai -m space --create
-yabai -m space 2 --label code
-yabai -m space --create
-yabai -m space 3 --label term
-yabai -m space --create
-yabai -m space 4 --label chat
-yabai -m space --create
-yabai -m space 5 --label media
-
-yabai -m space term --display 1
-yabai -m space main --display 2
-yabai -m space media --display 1
+SPACE_DIFF=($(yabai -m query --spaces | jq '. | length'))
+for ((i=$SPACE_DIFF;i<9; i+=1))
+do
+    echo "creating space"
+    yabai -m space --create
+done
 
 # App rules
 
-yabai -m rule --add app=Spotify space=media
+# yabai -m rule --add app=Spotify space=media
 
 # ignore MS Teams
 yabai -m signal --add \
@@ -76,11 +67,26 @@ yabai -m signal --add \
 yabai -m rule --add app='^Microsoft Teams Notification$' manage=off
 
 # update status bar
-yabai -m config top_padding 20
-yabai -m signal --add event=space_changed action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-primary-jsx\"'"
-yabai -m signal --add event=window_focused action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-primary-jsx\"'"
-yabai -m signal --add event=space_changed action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
-yabai -m signal --add event=window_focused action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
+yabai -m config top_padding 30
+
+# Refresh spaces widget on space change
+yabai -m signal --add event=space_changed action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"simple-bar-spaces-jsx\"'"
+# Refresh spaces widget on display focus change
+yabai -m signal --add event=display_changed action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"simple-bar-spaces-jsx\"'"
+# Refresh process widget on space change
+yabai -m signal --add event=space_changed action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"simple-bar-process-jsx\"'"
+# Enable spaces widget refresh on your 2nd monitor
+yabai -m signal --add event=space_changed action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"simple-bar-spaces-2-jsx\"'"
+
+# Refresh process widget on when focused application changes
+yabai -m signal --add event=application_front_switched action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"simple-bar-process-jsx\"'"
+# Refresh spaces widget on when focused application changes
+yabai -m signal --add event=application_front_switched action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"simple-bar-spaces-jsx\"'"
+
+# Refresh process widget on when an application window is closed
+yabai -m signal --add event=window_destroyed action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"simple-bar-process-jsx\"'"
+# Refresh spaces widget on when an application window is closed
+yabai -m signal --add event=window_destroyed action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"simple-bar-spaces-jsx\"'"
 
 echo "yabai configuration loaded.."
 

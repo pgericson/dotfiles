@@ -13,6 +13,7 @@ brew "koekeishiya/homebrew-formulae/yabai"
 cask "ubersicht"
 cask "sf-symbols"
 
+# misc
 brew "tmux"
 brew "vim"
 brew "fzf"
@@ -49,6 +50,7 @@ cask "postgres"
 cask "iterm2"
 cask "tableplus"
 cask "cyberduck"
+cask "oxygen-xml-editor"
 
 # java shit
 tap "AdoptOpenJDK/openjdk"

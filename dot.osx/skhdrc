@@ -97,10 +97,12 @@ cmd + shift - up : yabai -m window --swap north
 cmd + shift - right : yabai -m window --swap east
 cmd + shift - down : yabai -m window --swap south
 cmd + shift - left : yabai -m window --swap west
-cmd + shift - k : yabai -m window --swap north
-cmd + shift - l : yabai -m window --swap east
-cmd + shift - j : yabai -m window --swap south
-cmd + shift - h : yabai -m window --swap west
+
+# move window, don't swap
+cmd + shift - k : yabai -m window --warp north
+cmd + shift - l : yabai -m window --warp east
+cmd + shift - j : yabai -m window --warp south
+cmd + shift - h : yabai -m window --warp west
 
 # move managed window
 # shift + cmd - h : yabai -m window --warp east
@@ -141,7 +143,8 @@ ctrl + shift - 0 : yabai -m window --space 10
 # shift + cmd - z : yabai -m window --space next; yabai -m space --focus next
 # shift + cmd - 2 : yabai -m window --space  2; yabai -m space --focus 2
 
-# focus monitor
+
+# focus next display
 ctrl + alt - j  : yabai -m display --focus recent
 # ctrl + alt - l  : yabai -m display --focus 3
 
