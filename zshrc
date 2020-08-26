@@ -166,6 +166,7 @@ ZSH_AUTOSUGGEST_COMPLETION_IGNORE="git *"
 
 # all my aliases
 if test -f ~/.bash_aliases; then . ~/.bash_aliases; fi
+if test -f ~/.local_aliases; then . ~/.local_aliases; fi
 
 if test -d "$HOME/.local/bin"; then PATH="$HOME/.local/bin:$PATH"; fi
 if test -d "/opt/bin"; then PATH="/opt/bin:$PATH"; fi

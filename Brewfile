@@ -41,6 +41,7 @@ cask "spotify"
 cask "firefox"
 cask "dashlane"
 cask "skitch"
+cask "google-chrome"
 
 # development gui stuff
 cask "visual-studio-code"
@@ -51,6 +52,12 @@ cask "iterm2"
 cask "tableplus"
 cask "cyberduck"
 cask "oxygen-xml-editor"
+cask "keybase"
+
+# cloudstuff
+cask "google-cloud-sdk"
+brew "kubectl"
+brew "k9s"
 
 # java shit
 tap "AdoptOpenJDK/openjdk"
