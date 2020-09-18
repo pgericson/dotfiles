@@ -4,14 +4,13 @@ brew "bash-completion"
 brew "anyenv"
 
 tap "github/gh"
-brew "github/gh/gh"
+brew "gh"
 
 # window manager
 tap "koekeishiya/homebrew-formulae"
 brew "koekeishiya/homebrew-formulae/skhd"
 brew "koekeishiya/homebrew-formulae/yabai"
-cask "ubersicht"
-cask "sf-symbols"
+cask "whichspace"
 
 # misc
 brew "tmux"
@@ -31,17 +30,21 @@ brew "zsh-completions"
 brew "poppler" # used for pdftotext in mario
 brew "postgresql"
 brew "redis"
+brew "imagemagick@6", link: true, conflicts_with: ["imagemagick"]
 
 # pg gem dependencies
 brew "libpq"
 
 # GUI programs
-cask "slack"
 cask "spotify"
 cask "firefox"
 cask "dashlane"
 cask "skitch"
 cask "google-chrome"
+
+# communications
+cask "slack"
+cask "microsoft-teams"
 
 # development gui stuff
 cask "visual-studio-code"
@@ -53,6 +56,8 @@ cask "tableplus"
 cask "cyberduck"
 cask "oxygen-xml-editor"
 cask "keybase"
+cask "gitkraken" # maybe remove?
+cask "postman"
 
 # cloudstuff
 cask "google-cloud-sdk"

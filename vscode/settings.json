@@ -1,5 +1,14 @@
 {
     "editor.tabCompletion": "on",
     "typescript.npm": "",
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    "AllAutocomplete.cycleOpenDocumentsOnLaunch": true,
+    "AllAutocomplete.showCurrentDocument": true,
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 100
 }

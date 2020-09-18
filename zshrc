@@ -221,3 +221,8 @@ alias java11='export JAVA_HOME=$JAVA_11_HOME'
 # default to Java 11
 java11
 
+# imagemagick
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/imagemagick@6/lib"
+export CPPFLAGS="-I/usr/local/opt/imagemagick@6/include"
+
