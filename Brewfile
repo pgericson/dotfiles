@@ -31,6 +31,9 @@ brew "poppler" # used for pdftotext in mario
 brew "postgresql"
 brew "redis"
 brew "imagemagick@6", link: true, conflicts_with: ["imagemagick"]
+tap "InstantClientTap/instantclient"
+brew "instantclient-sdk"
+brew "instantclient-basic"
 
 # pg gem dependencies
 brew "libpq"
@@ -45,6 +48,7 @@ cask "google-chrome"
 # communications
 cask "slack"
 cask "microsoft-teams"
+cask "zoomus"
 
 # development gui stuff
 cask "visual-studio-code"
